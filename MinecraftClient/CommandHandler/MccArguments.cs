@@ -86,24 +86,9 @@ namespace MinecraftClient.CommandHandler
             return new AutoCraftRecipeNameArgumentType();
         }
 
-        public static FarmerCropTypeArgumentType FarmerCropType()
-        {
-            return new FarmerCropTypeArgumentType();
-        }
-
-        public static ChatBots.Farmer.CropType GetFarmerCropType<TSource>(CommandContext<TSource> context, string name)
-        {
-            return context.GetArgument<ChatBots.Farmer.CropType>(name);
-        }
-
         public static PlayerNameArgumentType PlayerName()
         {
             return new PlayerNameArgumentType();
-        }
-
-        public static MapBotMapIdArgumentType MapBotMapId()
-        {
-            return new MapBotMapIdArgumentType();
         }
 
         public static HotbarSlotArgumentType HotbarSlot()

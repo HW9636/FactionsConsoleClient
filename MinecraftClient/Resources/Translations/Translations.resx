@@ -117,18 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="bot.alerts.end_rain" xml:space="preserve">
-    <value>Weather change: It is no longer raining.</value>
-  </data>
-  <data name="bot.alerts.end_thunderstorm" xml:space="preserve">
-    <value>Weather change: It is no longer a thunderstorm.</value>
-  </data>
-  <data name="bot.alerts.start_rain" xml:space="preserve">
-    <value>Weather change: It is raining now.</value>
-  </data>
-  <data name="bot.alerts.start_thunderstorm" xml:space="preserve">
-    <value>Weather change: It is a thunderstorm.</value>
-  </data>
   <data name="bot.antiafk.invalid_walk_range" xml:space="preserve">
     <value>Invalid walk range provided, must be a positive integer greater than 0, using default value of 5!</value>
   </data>
@@ -137,9 +125,6 @@
   </data>
   <data name="bot.antiafk.swapping" xml:space="preserve">
     <value>The time range begins with a bigger value, swapped them around.</value>
-  </data>
-  <data name="bot.autoAttack.invalidcooldown" xml:space="preserve">
-    <value>Attack cooldown value cannot be smaller than 0.</value>
   </data>
   <data name="bot.autoCraft.aborted" xml:space="preserve">
     <value>Crafting aborted! Check your available materials.</value>
@@ -219,39 +204,6 @@
   <data name="bot.autoCraft.timeout" xml:space="preserve">
     <value>Action timeout! Reason: {0}</value>
   </data>
-  <data name="bot.autodig.available_cmd" xml:space="preserve">
-    <value>Available commands: {0}. Use /autodig help &lt;cmd name&gt; for more information.</value>
-  </data>
-  <data name="bot.autodig.cmd" xml:space="preserve">
-    <value>Auto-digging ChatBot command</value>
-  </data>
-  <data name="bot.autodig.dig_timeout" xml:space="preserve">
-    <value>Digging block timeout, retry.</value>
-  </data>
-  <data name="bot.autodig.help.help" xml:space="preserve">
-    <value>Get the command description. Usage: /autodig help &lt;command name&gt;</value>
-  </data>
-  <data name="bot.autodig.help.start" xml:space="preserve">
-    <value>Start the automatic digging bot.</value>
-  </data>
-  <data name="bot.autodig.help.stop" xml:space="preserve">
-    <value>Deactivate the automatic digging bot.</value>
-  </data>
-  <data name="bot.autodig.not_allow" xml:space="preserve">
-    <value>The block currently pointed to is not in the allowed list.</value>
-  </data>
-  <data name="bot.autodig.no_inv_handle" xml:space="preserve">
-    <value>Inventory handling is not enabled. Unable to switch tools automatically.</value>
-  </data>
-  <data name="bot.autodig.start" xml:space="preserve">
-    <value>Automatic digging has started.</value>
-  </data>
-  <data name="bot.autodig.start_delay" xml:space="preserve">
-    <value>Digging will start in {0:0.0} second(s).</value>
-  </data>
-  <data name="bot.autodig.stop" xml:space="preserve">
-    <value>Auto-digging has been stopped.</value>
-  </data>
   <data name="bot.autoDrop.added" xml:space="preserve">
     <value>Added item {0}</value>
   </data>
@@ -298,69 +250,30 @@
   <data name="bot.autoFish.available_cmd" xml:space="preserve">
     <value>Available commands: {0}. Use /fish help &lt;cmd name&gt; for more information.</value>
   </data>
-  <data name="bot.autoFish.cast_timeout" xml:space="preserve">
-    <value>Casting timeout and will soon retry. (Timeout increased to {0:0.0} sec).</value>
+
+  <!-- Factions Bot Translations-->
+  <data name="bot.factionsAfk.launch" xml:space="preserve">
+      <value>FactionsAFKBot has launched.</value>
   </data>
-  <data name="bot.autoFish.caught" xml:space="preserve">
-    <value>Retract the fishing rod. (Count: {0})</value>
+  <data name="bot.factionsAfk.ignored_user_logout" xml:space="preserve">
+      <value>FactionsAFKBot has ignored disconnect, since it is user logout.</value>
   </data>
-  <data name="bot.autoFish.caught_at" xml:space="preserve">
-    <value>Retract the fishing rod at ({0:0.0},{1:0.0},{2:0.0})! (Count: {3})</value>
+  <data name="bot.factionsAfk.reconnecting" xml:space="preserve">
+      <value>FactionsAFKBot is attempting to reconnect: '{0}'.</value>
   </data>
-  <data name="bot.autoFish.cmd" xml:space="preserve">
-    <value>Auto-Fishing ChatBot command</value>
+  <data name="bot.factionsAfk.reconnect_delay" xml:space="preserve">
+      <value>FactionsAFKBot is reconnecting with {0}s delay.</value>
   </data>
-  <data name="bot.autoFish.despawn" xml:space="preserve">
-    <value>Fish floating despawn, will re-cast.</value>
+  <data name="bot.factionsAfk.command_interval" xml:space="preserve">
+      <value>FactionsAFKBot is sleeping {0}s.</value>
   </data>
-  <data name="bot.autoFish.fishing_timeout" xml:space="preserve">
-    <value>Fishing timeout, will soon re-cast.</value>
+  <data name="bot.factionsAfk.going_home" xml:space="preserve">
+      <value>FactionsAFKBot is going home: /{0}</value>
   </data>
-  <data name="bot.autoFish.got" xml:space="preserve">
-    <value>Fishing got {0}</value>
+  <data name="bot.factionsAfk.respawning" xml:space="preserve">
+      <value>FactionsAFKBot is respawning.</value>
   </data>
-  <data name="bot.autoFish.help.help" xml:space="preserve">
-    <value>Get the command description. Usage: /fish help &lt;command name&gt;</value>
-  </data>
-  <data name="bot.autoFish.help.start" xml:space="preserve">
-    <value>Start auto-fishing.</value>
-  </data>
-  <data name="bot.autoFish.help.status" xml:space="preserve">
-    <value>List all obtained items. Or use "/fish status clear" to clear the list.</value>
-  </data>
-  <data name="bot.autoFish.help.stop" xml:space="preserve">
-    <value>Stop auto-fishing.</value>
-  </data>
-  <data name="bot.autoFish.no_inv_handle" xml:space="preserve">
-    <value>Inventory handling is not enabled. Cannot check rod durability and switch rods.</value>
-  </data>
-  <data name="bot.autoFish.no_rod" xml:space="preserve">
-    <value>Current fishing rod is not available. Maybe broken or low durability?</value>
-  </data>
-  <data name="bot.autoFish.start" xml:space="preserve">
-    <value>Start auto-fishing.</value>
-  </data>
-  <data name="bot.autoFish.start_at" xml:space="preserve">
-    <value>Fishing will start in {0:0.0} second(s).</value>
-  </data>
-  <data name="bot.autoFish.status_clear" xml:space="preserve">
-    <value>The record of the obtained items has been cleared.</value>
-  </data>
-  <data name="bot.autoFish.status_info" xml:space="preserve">
-    <value>All items obtained from fishing (not entirely accurate):</value>
-  </data>
-  <data name="bot.autoFish.stop" xml:space="preserve">
-    <value>Stop auto-fishing.</value>
-  </data>
-  <data name="bot.autoFish.switch" xml:space="preserve">
-    <value>Switch to the rod in slot {0}, durability {1}/64.</value>
-  </data>
-  <data name="bot.autoFish.throw" xml:space="preserve">
-    <value>Casting successfully.</value>
-  </data>
-  <data name="bot.autoFish.update_lookat" xml:space="preserve">
-    <value>Update yaw = {0:0.00}, pitch = {1:0.00}.</value>
-  </data>
+
   <data name="bot.autoRelog.curr_dir" xml:space="preserve">
     <value>Current directory was: {0}</value>
   </data>
@@ -463,170 +376,6 @@ cooldown: {6}</value>
   <data name="bot.DiscordBridge.unknown_error" xml:space="preserve">
     <value>An unknown error has occured!</value>
   </data>
-  <data name="bot.farmer.already_running" xml:space="preserve">
-    <value>The bot is already farming!</value>
-  </data>
-  <data name="bot.farmer.already_stopped" xml:space="preserve">
-    <value>The bot has already stopped farming!</value>
-  </data>
-  <data name="bot.farmer.crop_type" xml:space="preserve">
-    <value>Crop type</value>
-  </data>
-  <data name="bot.farmer.desc" xml:space="preserve">
-    <value>Farming bot</value>
-  </data>
-  <data name="bot.farmer.invalid_crop_type" xml:space="preserve">
-    <value>Invalid crop type provided (Types which you can use: Beetroot, Carrot, Melon, Netherwart, Pumpkin, Potato, Wheat)!</value>
-  </data>
-  <data name="bot.farmer.invalid_radius" xml:space="preserve">
-    <value>Invalid radius provided, you must provide a valid integer number greater than 0!</value>
-  </data>
-  <data name="bot.farmer.needs_inventory" xml:space="preserve">
-    <value>The Farmer bot needs Inventory Handling in order to work, please enable it!</value>
-  </data>
-  <data name="bot.farmer.needs_terrain" xml:space="preserve">
-    <value>The Farmer bot needs Terrain Handling in order to work, please enable it!</value>
-  </data>
-  <data name="bot.farmer.not_implemented" xml:space="preserve">
-    <value>Not implemented bellow 1.13!</value>
-  </data>
-  <data name="bot.farmer.radius" xml:space="preserve">
-    <value>Radius</value>
-  </data>
-  <data name="bot.farmer.started" xml:space="preserve">
-    <value>Started farming!</value>
-  </data>
-  <data name="bot.farmer.stopped" xml:space="preserve">
-    <value>Stopped farming!</value>
-  </data>
-  <data name="bot.farmer.stopping" xml:space="preserve">
-    <value>Stoping farming, this might take a second...</value>
-  </data>
-  <data name="bot.farmer.warining_allow_teleport" xml:space="preserve">
-    <value>You have enabled teleporting, this might get your bot account kicked and in the worst case scenario banned! Use with caution!</value>
-  </data>
-  <data name="bot.farmer.warining_force_unsafe" xml:space="preserve">
-    <value>You have enabled un-safe movement, the bot might get hurt!</value>
-  </data>
-  <data name="bot.farmer.warining_invalid_parameter" xml:space="preserve">
-    <value>Invalid parameter "{0}" provided (Use format: "key:value")!</value>
-  </data>
-  <data name="bot.mailer.cmd" xml:space="preserve">
-    <value>mailer command</value>
-  </data>
-  <data name="bot.mailer.cmd.getignored" xml:space="preserve">
-    <value>--- Ignore list ---
-{0}</value>
-  </data>
-  <data name="bot.mailer.cmd.getmails" xml:space="preserve">
-    <value>--- Mails in database ---
-{0}</value>
-  </data>
-  <data name="bot.mailer.cmd.help" xml:space="preserve">
-    <value>See usage</value>
-  </data>
-  <data name="bot.mailer.cmd.ignore.added" xml:space="preserve">
-    <value>Added {0} to the ignore list!</value>
-  </data>
-  <data name="bot.mailer.cmd.ignore.invalid" xml:space="preserve">
-    <value>Missing or invalid name. Usage: {0} &lt;username&gt;</value>
-  </data>
-  <data name="bot.mailer.cmd.ignore.removed" xml:space="preserve">
-    <value>Removed {0} from the ignore list!</value>
-  </data>
-  <data name="bot.mailer.create.db" xml:space="preserve">
-    <value>Creating new database file: {0}</value>
-  </data>
-  <data name="bot.mailer.create.ignore" xml:space="preserve">
-    <value>Creating new ignore list: {0}</value>
-  </data>
-  <data name="bot.mailer.delivered" xml:space="preserve">
-    <value>Delivered: {0}</value>
-  </data>
-  <data name="bot.mailer.init" xml:space="preserve">
-    <value>Initializing Mailer with settings:</value>
-  </data>
-  <data name="bot.mailer.init.db" xml:space="preserve">
-    <value> - Database File: {0}</value>
-  </data>
-  <data name="bot.mailer.init.db_size" xml:space="preserve">
-    <value> - Max Database Size: {0}</value>
-  </data>
-  <data name="bot.mailer.init.ignore" xml:space="preserve">
-    <value> - Ignore List: {0}</value>
-  </data>
-  <data name="bot.mailer.init.mail_retention" xml:space="preserve">
-    <value> - Mail Retention: {0}</value>
-  </data>
-  <data name="bot.mailer.init.max_mails" xml:space="preserve">
-    <value> - Max Mails per Player: {0}</value>
-  </data>
-  <data name="bot.mailer.init.public" xml:space="preserve">
-    <value> - Public Interactions: {0}</value>
-  </data>
-  <data name="bot.mailer.init_fail.db_size" xml:space="preserve">
-    <value>Cannot enable Mailer: Max Database Size must be greater than zero. Please review the settings.</value>
-  </data>
-  <data name="bot.mailer.init_fail.mail_retention" xml:space="preserve">
-    <value>Cannot enable Mailer: Mail Retention must be greater than zero. Please review the settings.</value>
-  </data>
-  <data name="bot.mailer.init_fail.max_mails" xml:space="preserve">
-    <value>Cannot enable Mailer: Max Mails per Player must be greater than zero. Please review the settings.</value>
-  </data>
-  <data name="bot.mailer.load.db" xml:space="preserve">
-    <value>Loading database file: {0}</value>
-  </data>
-  <data name="bot.mailer.load.ignore" xml:space="preserve">
-    <value>Loading ignore list: </value>
-  </data>
-  <data name="bot.mailer.process_mails" xml:space="preserve">
-    <value>Looking for mails to send @ {0}</value>
-  </data>
-  <data name="bot.mailer.saving" xml:space="preserve">
-    <value>Saving message: {0}</value>
-  </data>
-  <data name="bot.mailer.user_ignored" xml:space="preserve">
-    <value>{0} is ignored!</value>
-  </data>
-  <data name="bot.map.cmd.desc" xml:space="preserve">
-    <value>Render maps (item maps)</value>
-  </data>
-  <data name="bot.map.cmd.invalid_id" xml:space="preserve">
-    <value>Invalid ID provided, must be a number!</value>
-  </data>
-  <data name="bot.map.cmd.not_found" xml:space="preserve">
-    <value>A map with id '{0}' does not exists!</value>
-  </data>
-  <data name="bot.map.failed_to_render" xml:space="preserve">
-    <value>Failed to render the map with id: '{0}'</value>
-  </data>
-  <data name="bot.map.list_item" xml:space="preserve">
-    <value>- Map id: {0} (Last Updated: {1})</value>
-  </data>
-  <data name="bot.map.no_maps" xml:space="preserve">
-    <value>No maps received!</value>
-  </data>
-  <data name="bot.map.received" xml:space="preserve">
-    <value>The list of received maps from the server:</value>
-  </data>
-  <data name="bot.map.received_map" xml:space="preserve">
-    <value>Received a new Map, with Id: {0}</value>
-  </data>
-  <data name="bot.map.rendered" xml:space="preserve">
-    <value>Succesfully rendered a map with id '{0}' to: '{1}'</value>
-  </data>
-  <data name="bot.map.resized_rendered_image" xml:space="preserve">
-    <value>Resized the rendered image of the map with id: '{0}' to {1}x{1}.</value>
-  </data>
-  <data name="bot.map.scale" xml:space="preserve">
-    <value>The size of the map is reduced from ({0}x{1}) to ({2}x{3}) due to the size limitation of the current terminal.</value>
-  </data>
-  <data name="bot.map.sent_to_discord" xml:space="preserve">
-    <value>Sent a rendered image of a map with an id '{0}' to the Discord via Discord Brdige chat bot!</value>
-  </data>
-  <data name="bot.map.sent_to_telegram" xml:space="preserve">
-    <value>Sent a rendered image of a map with an id '{0}' to the Telegram via Telegram Bridge chat bot!</value>
-  </data>
   <data name="bot.replayCapture.cmd" xml:space="preserve">
     <value>replay command</value>
   </data>
@@ -681,82 +430,22 @@ cooldown: {6}</value>
  timeinterval: {5}
  action: {6}</value>
   </data>
-  <data name="bot.TelegramBridge.canceled_sending" xml:space="preserve">
-    <value>Sending message to Telegram was canceled due an error occuring. For more info enable Debug.</value>
-  </data>
-  <data name="bot.TelegramBridge.command_executed" xml:space="preserve">
-    <value>The command was executed with the result</value>
-  </data>
-  <data name="bot.TelegramBridge.connected" xml:space="preserve">
-    <value>Succesfully connected with the MCC!</value>
-  </data>
-  <data name="bot.TelegramBridge.desc" xml:space="preserve">
-    <value>This command allows you to specify in the which direction the messages will be relayed via the Telegram Bridge chat bot.</value>
-  </data>
-  <data name="bot.TelegramBridge.direction" xml:space="preserve">
-    <value>Direction of the Telegram Brdige has been switched to '{0}'!</value>
-  </data>
-  <data name="bot.TelegramBridge.direction.both" xml:space="preserve">
-    <value>Both</value>
-  </data>
-  <data name="bot.TelegramBridge.direction.minecraft" xml:space="preserve">
-    <value>Minecraft</value>
-  </data>
-  <data name="bot.TelegramBridge.direction.Telegram" xml:space="preserve">
-    <value>Telegram</value>
-  </data>
-  <data name="bot.TelegramBridge.disconnected" xml:space="preserve">
-    <value>Disconnected from from the MCC!</value>
-  </data>
-  <data name="bot.TelegramBridge.invalid_direction" xml:space="preserve">
-    <value>Invalid direction provided! Available directions: both|b, minecraft|mc, telegram|tg|t. Example: "tgbridge direction mc"</value>
-  </data>
-  <data name="bot.TelegramBridge.missing_authorized_channels" xml:space="preserve">
-    <value>[WARNING] You have not provided any Channel IDs, for "Authorized_Chat_Ids" field, anyone who finds your bot will be able to send messages and commands to it!</value>
-  </data>
-  <data name="bot.TelegramBridge.missing_channel_id" xml:space="preserve">
-    <value>[WARNING] You have not provided a Channel ID, you will ONLY get replies to commands sent from Telegram!</value>
-  </data>
-  <data name="bot.TelegramBridge.missing_token" xml:space="preserve">
-    <value>Please provide a valid bot token!</value>
-  </data>
-  <data name="bot.TelegramBridge.unauthorized" xml:space="preserve">
-    <value>**🛑 Unauthorized access! 🛑
 
-Add the ID of this chat to "Authorized_Chat_Ids" field in the configuration file to gain access!**</value>
+  <data name="botname.FactionsAFKBot" xml:space="preserve">
+      <value>FactionsAFKBot</value>
   </data>
-  <data name="bot.TelegramBridge.unknown_error" xml:space="preserve">
-    <value>An unknown error has occured!</value>
-  </data>
-  <data name="bot.testBot.said" xml:space="preserve">
-    <value>Bot: {0} said : {1}</value>
-  </data>
-  <data name="bot.testBot.told" xml:space="preserve">
-    <value>Bot: {0} told me : {1}</value>
-  </data>
-  <data name="botname.Alerts" xml:space="preserve">
-    <value>Alerts</value>
-  </data>
+
   <data name="botname.AntiAFK" xml:space="preserve">
     <value>AntiAFK</value>
   </data>
-  <data name="botname.AutoAttack" xml:space="preserve">
-    <value>AutoAttack</value>
-  </data>
   <data name="botname.AutoCraft" xml:space="preserve">
     <value>AutoCraft</value>
-  </data>
-  <data name="botname.AutoDig" xml:space="preserve">
-    <value>AutoDig</value>
   </data>
   <data name="botname.AutoDrop" xml:space="preserve">
     <value>AutoDrop</value>
   </data>
   <data name="botname.AutoEat" xml:space="preserve">
     <value>AutoEat</value>
-  </data>
-  <data name="botname.AutoFishing" xml:space="preserve">
-    <value>AutoFishing</value>
   </data>
   <data name="botname.AutoRelog" xml:space="preserve">
     <value>AutoRelog</value>
@@ -770,24 +459,6 @@ Add the ID of this chat to "Authorized_Chat_Ids" field in the configuration file
   <data name="botname.DiscordBridge" xml:space="preserve">
     <value>DiscordBridge</value>
   </data>
-  <data name="botname.Farmer" xml:space="preserve">
-    <value>Farmer</value>
-  </data>
-  <data name="botname.FollowPlayer" xml:space="preserve">
-    <value>FollowPlayer</value>
-  </data>
-  <data name="botname.HangmanGame" xml:space="preserve">
-    <value>HangmanGame</value>
-  </data>
-  <data name="botname.Mailer" xml:space="preserve">
-    <value>Mailer</value>
-  </data>
-  <data name="botname.Map" xml:space="preserve">
-    <value>Map</value>
-  </data>
-  <data name="botname.PlayerListLogger" xml:space="preserve">
-    <value>PlayerListLogger</value>
-  </data>
   <data name="botname.RemoteControl" xml:space="preserve">
     <value>RemoteControl</value>
   </data>
@@ -799,12 +470,6 @@ Add the ID of this chat to "Authorized_Chat_Ids" field in the configuration file
   </data>
   <data name="botname.ScriptScheduler" xml:space="preserve">
     <value>ScriptScheduler</value>
-  </data>
-  <data name="botname.TelegramBridge" xml:space="preserve">
-    <value>TelegramBridge</value>
-  </data>
-  <data name="botname.TestBot" xml:space="preserve">
-    <value>TestBot</value>
   </data>
   <data name="cache.converting" xml:space="preserve">
     <value>Converting session cache from disk: {0}</value>

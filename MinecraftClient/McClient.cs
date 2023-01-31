@@ -264,28 +264,19 @@ namespace MinecraftClient
         /// </summary>
         private void RegisterBots(bool reload = false)
         {
-            if (Config.ChatBot.Alerts.Enabled) { BotLoad(new Alerts()); }
+            // Factions Bots
+            if (Config.ChatBot.FactionsAFKBot.Enabled) { BotLoad(new FactionsAFKBot()); }
+
             if (Config.ChatBot.AntiAFK.Enabled) { BotLoad(new AntiAFK()); }
-            if (Config.ChatBot.AutoAttack.Enabled) { BotLoad(new AutoAttack()); }
             if (Config.ChatBot.AutoCraft.Enabled) { BotLoad(new AutoCraft()); }
-            if (Config.ChatBot.AutoDig.Enabled) { BotLoad(new AutoDig()); }
             if (Config.ChatBot.AutoDrop.Enabled) { BotLoad(new AutoDrop()); }
             if (Config.ChatBot.AutoEat.Enabled) { BotLoad(new AutoEat()); }
-            if (Config.ChatBot.AutoFishing.Enabled) { BotLoad(new AutoFishing()); }
-            if (Config.ChatBot.AutoRelog.Enabled) { BotLoad(new AutoRelog()); }
             if (Config.ChatBot.AutoRespond.Enabled) { BotLoad(new AutoRespond()); }
             if (Config.ChatBot.ChatLog.Enabled) { BotLoad(new ChatLog()); }
             if (Config.ChatBot.DiscordBridge.Enabled) { BotLoad(new DiscordBridge()); }
-            if (Config.ChatBot.Farmer.Enabled) { BotLoad(new Farmer()); }
-            if (Config.ChatBot.FollowPlayer.Enabled) { BotLoad(new FollowPlayer()); }
-            if (Config.ChatBot.HangmanGame.Enabled) { BotLoad(new HangmanGame()); }
-            if (Config.ChatBot.Mailer.Enabled) { BotLoad(new Mailer()); }
-            if (Config.ChatBot.Map.Enabled) { BotLoad(new Map()); }
-            if (Config.ChatBot.PlayerListLogger.Enabled) { BotLoad(new PlayerListLogger()); }
             if (Config.ChatBot.RemoteControl.Enabled) { BotLoad(new RemoteControl()); }
             if (Config.ChatBot.ReplayCapture.Enabled && reload) { BotLoad(new ReplayCapture()); }
             if (Config.ChatBot.ScriptScheduler.Enabled) { BotLoad(new ScriptScheduler()); }
-            if (Config.ChatBot.TelegramBridge.Enabled) { BotLoad(new TelegramBridge()); }
             //Add your ChatBot here by uncommenting and adapting
             //BotLoad(new ChatBots.YourBot());
         }
@@ -517,8 +508,8 @@ namespace MinecraftClient
             }
 
             //Process AutoRelog last to make sure other bots can perform their cleanup tasks first (issue #1517)
-            List<ChatBot> onDisconnectBotList = bots.Where(bot => bot is not AutoRelog).ToList();
-            onDisconnectBotList.AddRange(bots.Where(bot => bot is AutoRelog));
+            List<ChatBot> onDisconnectBotList = bots.Where(bot => bot is not FactionsAFKBot).ToList();
+            onDisconnectBotList.AddRange(bots.Where(bot => bot is FactionsAFKBot));
 
             foreach (ChatBot bot in onDisconnectBotList)
             {

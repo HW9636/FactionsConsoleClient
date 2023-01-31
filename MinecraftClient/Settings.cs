@@ -522,7 +522,7 @@ namespace MinecraftClient
                     public List<string> BotOwners = new() { "Player1", "Player2" };
 
                     [TomlInlineComment("$Main.Advanced.mc_version$")]
-                    public string MinecraftVersion = "auto";
+                    public string MinecraftVersion = "1.8.9";
 
                     [TomlInlineComment("$Main.Advanced.mc_forge$")]
                     public ForgeConfigType EnableForge = ForgeConfigType.no;
@@ -1244,11 +1244,11 @@ namespace MinecraftClient
             [TomlDoNotInlineObject]
             public class ChatBotConfig
             {
-                [TomlPrecedingComment("$ChatBot.Alerts$")]
-                public ChatBots.Alerts.Configs Alerts
+                [TomlPrecedingComment("Factions AFK Bot")]
+                public ChatBots.FactionsAFKBot.Configs FactionsAFKBot
                 {
-                    get { return ChatBots.Alerts.Config; }
-                    set { ChatBots.Alerts.Config = value; ChatBots.Alerts.Config.OnSettingUpdate(); }
+                    get { return ChatBots.FactionsAFKBot.Config; }
+                    set { ChatBots.FactionsAFKBot.Config = value; ChatBots.FactionsAFKBot.Config.OnSettingUpdate(); }
                 }
 
                 [TomlPrecedingComment("$ChatBot.AntiAfk$")]
@@ -1258,25 +1258,11 @@ namespace MinecraftClient
                     set { ChatBots.AntiAFK.Config = value; ChatBots.AntiAFK.Config.OnSettingUpdate(); }
                 }
 
-                [TomlPrecedingComment("$ChatBot.AutoAttack$")]
-                public ChatBots.AutoAttack.Configs AutoAttack
-                {
-                    get { return ChatBots.AutoAttack.Config; }
-                    set { ChatBots.AutoAttack.Config = value; ChatBots.AutoAttack.Config.OnSettingUpdate(); }
-                }
-
                 [TomlPrecedingComment("$ChatBot.AutoCraft$")]
                 public ChatBots.AutoCraft.Configs AutoCraft
                 {
                     get { return ChatBots.AutoCraft.Config; }
                     set { ChatBots.AutoCraft.Config = value; ChatBots.AutoCraft.Config.OnSettingUpdate(); }
-                }
-
-                [TomlPrecedingComment("$ChatBot.AutoDig$")]
-                public ChatBots.AutoDig.Configs AutoDig
-                {
-                    get { return ChatBots.AutoDig.Config; }
-                    set { ChatBots.AutoDig.Config = value; ChatBots.AutoDig.Config.OnSettingUpdate(); }
                 }
 
                 [TomlPrecedingComment("$ChatBot.AutoDrop$")]
@@ -1291,20 +1277,6 @@ namespace MinecraftClient
                 {
                     get { return ChatBots.AutoEat.Config; }
                     set { ChatBots.AutoEat.Config = value; ChatBots.AutoEat.Config.OnSettingUpdate(); }
-                }
-
-                [TomlPrecedingComment("$ChatBot.AutoFishing$")]
-                public ChatBots.AutoFishing.Configs AutoFishing
-                {
-                    get { return ChatBots.AutoFishing.Config; }
-                    set { ChatBots.AutoFishing.Config = value; ChatBots.AutoFishing.Config.OnSettingUpdate(); }
-                }
-
-                [TomlPrecedingComment("$ChatBot.AutoRelog$")]
-                public ChatBots.AutoRelog.Configs AutoRelog
-                {
-                    get { return ChatBots.AutoRelog.Config; }
-                    set { ChatBots.AutoRelog.Config = value; ChatBots.AutoRelog.Config.OnSettingUpdate(); }
                 }
 
                 [TomlPrecedingComment("$ChatBot.AutoRespond$")]
@@ -1328,48 +1300,6 @@ namespace MinecraftClient
                     set { ChatBots.DiscordBridge.Config = value; ChatBots.DiscordBridge.Config.OnSettingUpdate(); }
                 }
 
-                [TomlPrecedingComment("$ChatBot.Farmer$")]
-                public ChatBots.Farmer.Configs Farmer
-                {
-                    get { return ChatBots.Farmer.Config; }
-                    set { ChatBots.Farmer.Config = value; ChatBots.Farmer.Config.OnSettingUpdate(); }
-                }
-
-                [TomlPrecedingComment("$ChatBot.FollowPlayer$")]
-                public ChatBots.FollowPlayer.Configs FollowPlayer
-                {
-                    get { return ChatBots.FollowPlayer.Config; }
-                    set { ChatBots.FollowPlayer.Config = value; ChatBots.FollowPlayer.Config.OnSettingUpdate(); }
-                }
-
-                [TomlPrecedingComment("$ChatBot.HangmanGame$")]
-                public ChatBots.HangmanGame.Configs HangmanGame
-                {
-                    get { return ChatBots.HangmanGame.Config; }
-                    set { ChatBots.HangmanGame.Config = value; ChatBots.HangmanGame.Config.OnSettingUpdate(); }
-                }
-
-                [TomlPrecedingComment("$ChatBot.Mailer$")]
-                public ChatBots.Mailer.Configs Mailer
-                {
-                    get { return ChatBots.Mailer.Config; }
-                    set { ChatBots.Mailer.Config = value; ChatBots.Mailer.Config.OnSettingUpdate(); }
-                }
-
-                [TomlPrecedingComment("$ChatBot.Map$")]
-                public ChatBots.Map.Configs Map
-                {
-                    get { return ChatBots.Map.Config; }
-                    set { ChatBots.Map.Config = value; ChatBots.Map.Config.OnSettingUpdate(); }
-                }
-
-                [TomlPrecedingComment("$ChatBot.PlayerListLogger$")]
-                public ChatBots.PlayerListLogger.Configs PlayerListLogger
-                {
-                    get { return ChatBots.PlayerListLogger.Config; }
-                    set { ChatBots.PlayerListLogger.Config = value; ChatBots.PlayerListLogger.Config.OnSettingUpdate(); }
-                }
-
                 [TomlPrecedingComment("$ChatBot.RemoteControl$")]
                 public ChatBots.RemoteControl.Configs RemoteControl
                 {
@@ -1389,13 +1319,6 @@ namespace MinecraftClient
                 {
                     get { return ChatBots.ScriptScheduler.Config; }
                     set { ChatBots.ScriptScheduler.Config = value; ChatBots.ScriptScheduler.Config.OnSettingUpdate(); }
-                }
-
-                [TomlPrecedingComment("$ChatBot.TelegramBridge$")]
-                public ChatBots.TelegramBridge.Configs TelegramBridge
-                {
-                    get { return ChatBots.TelegramBridge.Config; }
-                    set { ChatBots.TelegramBridge.Config = value; ChatBots.TelegramBridge.Config.OnSettingUpdate(); }
                 }
             }
         }

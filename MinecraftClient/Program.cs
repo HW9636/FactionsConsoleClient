@@ -25,26 +25,15 @@ using static MinecraftClient.Settings.MainConfigHealper.MainConfig.GeneralConfig
 namespace MinecraftClient
 {
     /// <summary>
-    /// Minecraft Console Client by the MCC Team (c) 2012-2022.
-    /// Allows to connect to any Minecraft server, send and receive text, automated scripts.
-    /// This source code is released under the CDDL 1.0 License.
+    /// FactionsConsoleClient by 9636Dev (Forked from MCC Team)
     /// </summary>
-    /// <remarks>
-    /// Typical steps to update MCC for a new Minecraft version
-    ///  - Implement protocol changes (see Protocol18.cs)
-    ///  - Handle new block types and states (see Material.cs)
-    ///  - Add support for new entity types (see EntityType.cs)
-    ///  - Add new item types for inventories (see ItemType.cs)
-    ///  - Mark new version as handled (see ProtocolHandler.cs)
-    ///  - Update MCHighestVersion field below (for versionning)
-    /// </remarks>
     static class Program
     {
         private static McClient? client;
         public static string[]? startupargs;
         public static CultureInfo ActualCulture = CultureInfo.CurrentCulture;
 
-        public const string Version = MCHighestVersion;
+        public const string Version = "1.0.0";
         public const string MCLowestVersion = "1.4.6";
         public const string MCHighestVersion = "1.19.3";
         public static readonly string? BuildInfo = null;
@@ -81,7 +70,7 @@ namespace MinecraftClient
             });
 
             //Setup ConsoleIO
-            ConsoleIO.LogPrefix = "§8[MCC] ";
+            ConsoleIO.LogPrefix = "§8[FCC] ";
             if (args.Length >= 1 && args[^1] == "BasicIO" || args.Length >= 1 && args[^1] == "BasicIO-NoColor")
             {
                 if (args.Length >= 1 && args[^1] == "BasicIO-NoColor")
@@ -95,7 +84,7 @@ namespace MinecraftClient
             if (!ConsoleIO.BasicIO)
                 ConsoleInteractive.ConsoleWriter.Init();
 
-            ConsoleIO.WriteLine($"Minecraft Console Client v{Version} - for MC {MCLowestVersion} to {MCHighestVersion} - Github.com/MCCTeam");
+            ConsoleIO.WriteLine($"FactionsConsoleClient v{Version} - for MC {MCLowestVersion} to {MCHighestVersion} - Github.com/HW9636");
 
             //Build information to facilitate processing of bug reports
             if (BuildInfo != null)
@@ -552,7 +541,7 @@ namespace MinecraftClient
                         ConsoleIO.WriteLine(Translations.mcc_retrieve);
                     if (!ProtocolHandler.GetServerInfo(InternalConfig.ServerIP, InternalConfig.ServerPort, ref protocolversion, ref forgeInfo))
                     {
-                        HandleFailure(Translations.error_ping, true, ChatBots.AutoRelog.DisconnectReason.ConnectionLost);
+                        HandleFailure(Translations.error_ping, true, ChatBots.FactionsAFKBot.DisconnectReason.ConnectionLost);
                         return;
                     }
                 }
@@ -600,7 +589,7 @@ namespace MinecraftClient
                     }
                     else
                     {
-                        HandleFailure(Translations.error_forgeforce, true, ChatBots.AutoRelog.DisconnectReason.ConnectionLost);
+                        HandleFailure(Translations.error_forgeforce, true, ChatBots.FactionsAFKBot.DisconnectReason.ConnectionLost);
                         return;
                     }
                 }
@@ -723,7 +712,7 @@ namespace MinecraftClient
         /// <param name="errorMessage">Error message to display and optionally pass to AutoRelog bot</param>
         /// <param name="versionError">Specify if the error is related to an incompatible or unkown server version</param>
         /// <param name="disconnectReason">If set, the error message will be processed by the AutoRelog bot</param>
-        public static void HandleFailure(string? errorMessage = null, bool versionError = false, ChatBots.AutoRelog.DisconnectReason? disconnectReason = null)
+        public static void HandleFailure(string? errorMessage = null, bool versionError = false, ChatBot.DisconnectReason? disconnectReason = null)
         {
             if (!String.IsNullOrEmpty(errorMessage))
             {
@@ -734,7 +723,7 @@ namespace MinecraftClient
 
                 if (disconnectReason.HasValue)
                 {
-                    if (ChatBots.AutoRelog.OnDisconnectStatic(disconnectReason.Value, errorMessage))
+                    if (ChatBots.FactionsAFKBot.OnDisconnectStatic(disconnectReason.Value, errorMessage))
                         return; //AutoRelog is triggering a restart of the client
                 }
             }
