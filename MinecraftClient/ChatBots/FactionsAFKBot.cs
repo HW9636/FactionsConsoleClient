@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using MinecraftClient.Scripting;
 using Tomlet.Attributes;
 
@@ -34,6 +35,12 @@ namespace MinecraftClient.ChatBots
             [TomlInlineComment("Automatically respawns when dead")]
             public bool auto_respawn = true;
 
+            [TomlInlineComment("Chat messages that can be used to detect when bot is killed")]
+            public string[] respawn_messages = { "^Your power is now ([0-9]+) \\/ [0-9]+$" };
+
+            [TomlInlineComment("Interval to run reconnect_commands, then home command, in seconds. Will be reset on reconnect and respawn")]
+            public int autorun_cmd_interval = 120;
+
             public void OnSettingUpdate()
             {
                 // Delay cannot be less than 100ms
@@ -45,10 +52,28 @@ namespace MinecraftClient.ChatBots
                 command_interval_randomness = Math.Abs(command_interval_randomness);
 
                 home_command = home_command.Trim();
+
+                Respawn_regex = new Regex[respawn_messages.Length];
+                for (int i = 0;i < respawn_messages.Length;i++)
+                {
+                    try
+                    {
+                        Respawn_regex[i] = new Regex(respawn_messages[i].Trim());
+                    }
+                    catch (ArgumentException) {
+                        Respawn_regex = new Regex[0];
+                        ConsoleIO.WriteLine(string.Format(Translations.bot_factionsAfk_invalid_regex, respawn_messages[i].Trim()));
+                        return;
+                    }
+                }
             }
         }
 
         private static readonly Random random = new();
+
+        private int Counter = 0;
+
+        private static Regex[] Respawn_regex = { };
 
         public FactionsAFKBot()
 		{
@@ -62,16 +87,49 @@ namespace MinecraftClient.ChatBots
 
         private void _Initialize()
         {
-            
+            LogToConsole("Regexs: " + Respawn_regex.ToString());
+        }
+
+        public override void Update()
+        {
+            Counter++;
+
+            if (Counter > Config.autorun_cmd_interval * 10) // 10 Ticks per second
+            {
+                Counter = 0;
+
+                SendReconnectCommands();
+                Home(true);
+            }
         }
 
         public override void OnDeath()
         {
-            //TODO: Doesn't work
+            _OnDeath();
+        }
+
+        public override void GetText(string text)
+        {
+            text = GetVerbatim(text);
+            foreach (Regex regex in Respawn_regex)
+            {
+                if (regex.IsMatch(text))
+                {
+                    LogToConsole("Death detected in message: " + text);
+                    _OnDeath(false);
+                    return;
+                }
+            }
+        }
+
+        private void _OnDeath(bool respawn = true)
+        {
             if (!Config.Enabled) return;
-            LogDebugToConsole(Translations.bot_factionsAfk_respawning);
+            LogToConsole(Translations.bot_factionsAfk_respawning);
+
+            Counter = 0;
             System.Threading.Thread.Sleep(200 + (int)(random.NextDouble() * 500));
-            Respawn();
+            if (respawn) Respawn();
             SendReconnectCommands();
             Home(true);
         }
@@ -81,6 +139,7 @@ namespace MinecraftClient.ChatBots
             if (!Config.Enabled) return;
             SendReconnectCommands();
             Home(true);
+            Counter = 0;
         }
 
         public override bool OnDisconnect(DisconnectReason reason, string message)
@@ -88,7 +147,7 @@ namespace MinecraftClient.ChatBots
             if (!Config.Enabled) return false;
             if (reason == DisconnectReason.UserLogout)
             {
-                LogDebugToConsole(Translations.bot_autoRelog_ignore_user_logout);
+                LogDebugToConsole(Translations.bot_factionsAfk_ignored_user_logout);
             }
             else 
             {
@@ -98,7 +157,6 @@ namespace MinecraftClient.ChatBots
                 LogDebugToConsole(string.Format(Translations.bot_factionsAfk_reconnecting, message));
 
                 Reconnect();
-                LogDebugToConsole(Translations.bot_autoRelog_reconnect_ignore);
                 return true;
             }
 

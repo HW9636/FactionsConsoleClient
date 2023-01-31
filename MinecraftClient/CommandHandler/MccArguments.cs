@@ -81,11 +81,6 @@ namespace MinecraftClient.CommandHandler
             return context.GetArgument<Inventory.WindowActionType>(name);
         }
 
-        public static AutoCraftRecipeNameArgumentType AutoCraftRecipeName()
-        {
-            return new AutoCraftRecipeNameArgumentType();
-        }
-
         public static PlayerNameArgumentType PlayerName()
         {
             return new PlayerNameArgumentType();

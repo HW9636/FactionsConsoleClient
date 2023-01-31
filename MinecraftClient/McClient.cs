@@ -266,19 +266,8 @@ namespace MinecraftClient
         {
             // Factions Bots
             if (Config.ChatBot.FactionsAFKBot.Enabled) { BotLoad(new FactionsAFKBot()); }
-
-            if (Config.ChatBot.AntiAFK.Enabled) { BotLoad(new AntiAFK()); }
-            if (Config.ChatBot.AutoCraft.Enabled) { BotLoad(new AutoCraft()); }
-            if (Config.ChatBot.AutoDrop.Enabled) { BotLoad(new AutoDrop()); }
-            if (Config.ChatBot.AutoEat.Enabled) { BotLoad(new AutoEat()); }
-            if (Config.ChatBot.AutoRespond.Enabled) { BotLoad(new AutoRespond()); }
-            if (Config.ChatBot.ChatLog.Enabled) { BotLoad(new ChatLog()); }
-            if (Config.ChatBot.DiscordBridge.Enabled) { BotLoad(new DiscordBridge()); }
-            if (Config.ChatBot.RemoteControl.Enabled) { BotLoad(new RemoteControl()); }
-            if (Config.ChatBot.ReplayCapture.Enabled && reload) { BotLoad(new ReplayCapture()); }
-            if (Config.ChatBot.ScriptScheduler.Enabled) { BotLoad(new ScriptScheduler()); }
-            //Add your ChatBot here by uncommenting and adapting
-            //BotLoad(new ChatBots.YourBot());
+            if (Config.ChatBot.FactionsCannonBot.Enabled) { BotLoad(new FactionsCannonBot()); }
+            if (Config.ChatBot.FactionsChatBot.Enabled) { BotLoad(new FactionsChatBot()); }
         }
 
         /// <summary>

@@ -117,276 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="bot.antiafk.invalid_walk_range" xml:space="preserve">
-    <value>Invalid walk range provided, must be a positive integer greater than 0, using default value of 5!</value>
-  </data>
-  <data name="bot.antiafk.not_using_terrain_handling" xml:space="preserve">
-    <value>The terrain handling is not enabled in the settings of the client, enable it if you want to use it with this bot. Using alternative (command) method.</value>
-  </data>
-  <data name="bot.antiafk.swapping" xml:space="preserve">
-    <value>The time range begins with a bigger value, swapped them around.</value>
-  </data>
-  <data name="bot.autoCraft.aborted" xml:space="preserve">
-    <value>Crafting aborted! Check your available materials.</value>
-  </data>
-  <data name="bot.autoCraft.alias" xml:space="preserve">
-    <value>Auto-crafting ChatBot command alias</value>
-  </data>
-  <data name="bot.autoCraft.available_cmd" xml:space="preserve">
-    <value>Available commands: {0}. Use /autocraft help &lt;cmd name&gt; for more information.</value>
-  </data>
-  <data name="bot.autoCraft.close_inventory" xml:space="preserve">
-    <value>Inventory #{0} was closed by AutoCraft</value>
-  </data>
-  <data name="bot.autoCraft.cmd" xml:space="preserve">
-    <value>Auto-crafting ChatBot command</value>
-  </data>
-  <data name="bot.autoCraft.cmd.list" xml:space="preserve">
-    <value>Total {0} recipes loaded: {1}</value>
-  </data>
-  <data name="bot.autoCraft.craft_fail" xml:space="preserve">
-    <value>Crafting failed! Waiting for more materials</value>
-  </data>
-  <data name="bot.autoCraft.exception.duplicate" xml:space="preserve">
-    <value>Duplicate recipe name specified: {0}</value>
-  </data>
-  <data name="bot.autoCraft.exception.name_miss" xml:space="preserve">
-    <value>Missing recipe name while parsing a recipe</value>
-  </data>
-  <data name="bot.autoCraft.help.help" xml:space="preserve">
-    <value>Get the command description. Usage: /autocraft help &lt;command name&gt;</value>
-  </data>
-  <data name="bot.autoCraft.help.list" xml:space="preserve">
-    <value>List available recipes.</value>
-  </data>
-  <data name="bot.autoCraft.help.load" xml:space="preserve">
-    <value>Load the config file.</value>
-  </data>
-  <data name="bot.autoCraft.help.reload" xml:space="preserve">
-    <value>Reload the config file.</value>
-  </data>
-  <data name="bot.autoCraft.help.resetcfg" xml:space="preserve">
-    <value>Write the default example config to default location.</value>
-  </data>
-  <data name="bot.autoCraft.help.start" xml:space="preserve">
-    <value>Start the crafting. Usage: /autocraft start &lt;recipe name&gt;</value>
-  </data>
-  <data name="bot.autoCraft.help.stop" xml:space="preserve">
-    <value>Stop the current running crafting process</value>
-  </data>
-  <data name="bot.autocraft.invaild_result" xml:space="preserve">
-    <value>Invalid result item!</value>
-  </data>
-  <data name="bot.autocraft.invaild_slots" xml:space="preserve">
-    <value>The number of slots does not match and has been adjusted automatically.</value>
-  </data>
-  <data name="bot.autoCraft.missing_material" xml:space="preserve">
-    <value>Missing material: {0}</value>
-  </data>
-  <data name="bot.autoCraft.no_recipe_name" xml:space="preserve">
-    <value>Please specify the recipe name you want to craft.</value>
-  </data>
-  <data name="bot.autoCraft.recipe_not_exist" xml:space="preserve">
-    <value>Specified recipe name does not exist. Check your config file.</value>
-  </data>
-  <data name="bot.autoCraft.start" xml:space="preserve">
-    <value>Starting AutoCraft: {0}</value>
-  </data>
-  <data name="bot.autoCraft.start_fail" xml:space="preserve">
-    <value>AutoCraft cannot be started. Check your available materials for crafting {0}</value>
-  </data>
-  <data name="bot.autoCraft.stop" xml:space="preserve">
-    <value>AutoCraft stopped</value>
-  </data>
-  <data name="bot.autoCraft.table_not_found" xml:space="preserve">
-    <value>table not found</value>
-  </data>
-  <data name="bot.autoCraft.timeout" xml:space="preserve">
-    <value>Action timeout! Reason: {0}</value>
-  </data>
-  <data name="bot.autoDrop.added" xml:space="preserve">
-    <value>Added item {0}</value>
-  </data>
-  <data name="bot.autoDrop.alias" xml:space="preserve">
-    <value>AutoDrop ChatBot command alias</value>
-  </data>
-  <data name="bot.autoDrop.cmd" xml:space="preserve">
-    <value>AutoDrop ChatBot command</value>
-  </data>
-  <data name="bot.autoDrop.incorrect_name" xml:space="preserve">
-    <value>Incorrect item name {0}. Please try again.</value>
-  </data>
-  <data name="bot.autoDrop.list" xml:space="preserve">
-    <value>Total {0} in the list:
- {1}</value>
-  </data>
-  <data name="bot.autoDrop.not_in_list" xml:space="preserve">
-    <value>Item not in the list</value>
-  </data>
-  <data name="bot.autoDrop.no_inventory" xml:space="preserve">
-    <value>Cannot find inventory {0}!</value>
-  </data>
-  <data name="bot.autoDrop.no_item" xml:space="preserve">
-    <value>No item in the list</value>
-  </data>
-  <data name="bot.autoDrop.no_mode" xml:space="preserve">
-    <value>Cannot read drop mode from config. Using include mode.</value>
-  </data>
-  <data name="bot.autoDrop.off" xml:space="preserve">
-    <value>AutoDrop disabled</value>
-  </data>
-  <data name="bot.autoDrop.on" xml:space="preserve">
-    <value>AutoDrop enabled</value>
-  </data>
-  <data name="bot.autoDrop.removed" xml:space="preserve">
-    <value>Removed item {0}</value>
-  </data>
-  <data name="bot.autoDrop.switched" xml:space="preserve">
-    <value>Switched to {0} mode.</value>
-  </data>
-  <data name="bot.autoDrop.unknown_mode" xml:space="preserve">
-    <value>Unknwon mode. Available modes: Include, Exclude, Everything</value>
-  </data>
-  <data name="bot.autoFish.available_cmd" xml:space="preserve">
-    <value>Available commands: {0}. Use /fish help &lt;cmd name&gt; for more information.</value>
-  </data>
-
-  <!-- Factions Bot Translations-->
   <data name="bot.factionsAfk.launch" xml:space="preserve">
-      <value>FactionsAFKBot has launched.</value>
+    <value>FactionsAFKBot has launched.</value>
   </data>
   <data name="bot.factionsAfk.ignored_user_logout" xml:space="preserve">
-      <value>FactionsAFKBot has ignored disconnect, since it is user logout.</value>
+    <value>FactionsAFKBot has ignored disconnect, since it is user logout.</value>
   </data>
   <data name="bot.factionsAfk.reconnecting" xml:space="preserve">
-      <value>FactionsAFKBot is attempting to reconnect: '{0}'.</value>
+    <value>FactionsAFKBot is attempting to reconnect: '{0}'.</value>
   </data>
   <data name="bot.factionsAfk.reconnect_delay" xml:space="preserve">
-      <value>FactionsAFKBot is reconnecting with {0}s delay.</value>
+    <value>FactionsAFKBot is reconnecting with {0}s delay.</value>
   </data>
   <data name="bot.factionsAfk.command_interval" xml:space="preserve">
-      <value>FactionsAFKBot is sleeping {0}s.</value>
+    <value>FactionsAFKBot is sleeping {0}s.</value>
   </data>
   <data name="bot.factionsAfk.going_home" xml:space="preserve">
-      <value>FactionsAFKBot is going home: /{0}</value>
+    <value>FactionsAFKBot is going home: /{0}</value>
   </data>
   <data name="bot.factionsAfk.respawning" xml:space="preserve">
-      <value>FactionsAFKBot is respawning.</value>
-  </data>
-
-  <data name="bot.autoRelog.curr_dir" xml:space="preserve">
-    <value>Current directory was: {0}</value>
-  </data>
-  <data name="bot.autoRelog.disconnect_msg" xml:space="preserve">
-    <value>Got disconnected with message: {0}</value>
-  </data>
-  <data name="bot.autoRelog.ignore_user_logout" xml:space="preserve">
-    <value>Disconnection initiated by User or MCC bot. Ignoring.</value>
-  </data>
-  <data name="bot.autoRelog.launch" xml:space="preserve">
-    <value>Launching with {0} reconnection attempts</value>
-  </data>
-  <data name="bot.autoRelog.no_kick_msg" xml:space="preserve">
-    <value>Initializing without a kick message file</value>
-  </data>
-  <data name="bot.autoRelog.reconnect" xml:space="preserve">
-    <value>Message contains '{0}'. Reconnecting.</value>
-  </data>
-  <data name="bot.autoRelog.reconnect_always" xml:space="preserve">
-    <value>Ignoring kick message, reconnecting anyway.</value>
-  </data>
-  <data name="bot.autoRelog.reconnect_ignore" xml:space="preserve">
-    <value>Message not containing any defined keywords. Ignoring.</value>
-  </data>
-  <data name="bot.autoRelog.wait" xml:space="preserve">
-    <value>Waiting {0:0.000} seconds before reconnecting...</value>
-  </data>
-  <data name="bot.autoRespond.file_not_found" xml:space="preserve">
-    <value>File not found: '{0}'</value>
-  </data>
-  <data name="bot.autoRespond.loaded_match" xml:space="preserve">
-    <value>Loaded match:
-{0}</value>
-  </data>
-  <data name="bot.autoRespond.loading" xml:space="preserve">
-    <value>Loading matches from '{0}'</value>
-  </data>
-  <data name="bot.autoRespond.match" xml:space="preserve">
-    <value>match: {0}
-regex: {1}
-action: {2}
-actionPrivate: {3}
-actionOther: {4}
-ownersOnly: {5}
-cooldown: {6}</value>
-  </data>
-  <data name="bot.autoRespond.match_run" xml:space="preserve">
-    <value>Running action: {0}</value>
-  </data>
-  <data name="bot.autoRespond.no_action" xml:space="preserve">
-    <value>No action for match:
-{0}</value>
-  </data>
-  <data name="bot.autoRespond.no_trigger" xml:space="preserve">
-    <value>This match will never trigger:
-{0}</value>
-  </data>
-  <data name="bot.chatLog.invalid_file" xml:space="preserve">
-    <value>Path '{0}' contains invalid characters.</value>
-  </data>
-  <data name="bot.DiscordBridge.canceled_sending" xml:space="preserve">
-    <value>Sending message to Discord was canceled due an error occuring. For more info enable Debug.</value>
-  </data>
-  <data name="bot.DiscordBridge.channel_not_found" xml:space="preserve">
-    <value>The provided channel with an id '{0}' has not been found!</value>
-  </data>
-  <data name="bot.DiscordBridge.command_executed" xml:space="preserve">
-    <value>The command was executed with the result</value>
-  </data>
-  <data name="bot.DiscordBridge.connected" xml:space="preserve">
-    <value>Succesfully connected with MCC!</value>
-  </data>
-  <data name="bot.DiscordBridge.desc" xml:space="preserve">
-    <value>This command allows you to specify in the which direction the messages will be relayed via the Discord Bridge chat bot.</value>
-  </data>
-  <data name="bot.DiscordBridge.direction" xml:space="preserve">
-    <value>Direction of the Discord Brdige has been switched to '{0}'!</value>
-  </data>
-  <data name="bot.DiscordBridge.direction.both" xml:space="preserve">
-    <value>Both</value>
-  </data>
-  <data name="bot.DiscordBridge.direction.discord" xml:space="preserve">
-    <value>Discord</value>
-  </data>
-  <data name="bot.DiscordBridge.direction.minecraft" xml:space="preserve">
-    <value>Minecraft</value>
-  </data>
-  <data name="bot.DiscordBridge.disconnected" xml:space="preserve">
-    <value>Successfully disconnected with MCC!</value>
-  </data>
-  <data name="bot.DiscordBridge.guild_not_found" xml:space="preserve">
-    <value>The provided guild/server with an id '{0}' has not been found!</value>
-  </data>
-  <data name="bot.DiscordBridge.invalid_direction" xml:space="preserve">
-    <value>Invalid direction provided! Available directions: both|b, minecraft|mc, discord|dsc. Example: "dscbridge direction mc"</value>
-  </data>
-  <data name="bot.DiscordBridge.missing_token" xml:space="preserve">
-    <value>Please provide a valid token!</value>
-  </data>
-  <data name="bot.DiscordBridge.unknown_error" xml:space="preserve">
-    <value>An unknown error has occured!</value>
-  </data>
-  <data name="bot.replayCapture.cmd" xml:space="preserve">
-    <value>replay command</value>
-  </data>
-  <data name="bot.replayCapture.created" xml:space="preserve">
-    <value>Replay file created.</value>
-  </data>
-  <data name="bot.replayCapture.restart" xml:space="preserve">
-    <value>Record was stopped. Restart the program to start another record.</value>
-  </data>
-  <data name="bot.replayCapture.stopped" xml:space="preserve">
-    <value>Record stopped.</value>
+    <value>FactionsAFKBot is respawning.</value>
   </data>
   <data name="bot.script.fail" xml:space="preserve">
     <value>Script '{0}' failed to run ({1}).</value>
@@ -400,76 +150,11 @@ cooldown: {6}</value>
   <data name="bot.script.pm.loaded" xml:space="preserve">
     <value>Script '{0}' loaded.</value>
   </data>
-  <data name="bot.scriptScheduler.loaded_task" xml:space="preserve">
-    <value>Loaded task:
-{0}</value>
-  </data>
-  <data name="bot.scriptScheduler.no_action" xml:space="preserve">
-    <value>No action for task:
-{0}</value>
-  </data>
-  <data name="bot.scriptScheduler.no_trigger" xml:space="preserve">
-    <value>This task will never trigger:
-{0}</value>
-  </data>
-  <data name="bot.scriptScheduler.running_inverval" xml:space="preserve">
-    <value>Interval / Running action: {0}</value>
-  </data>
-  <data name="bot.scriptScheduler.running_login" xml:space="preserve">
-    <value>Login / Running action: {0}</value>
-  </data>
-  <data name="bot.scriptScheduler.running_time" xml:space="preserve">
-    <value>Time / Running action: {0}</value>
-  </data>
-  <data name="bot.scriptScheduler.task" xml:space="preserve">
-    <value>triggeronfirstlogin: {0}
- triggeronlogin: {1}
- triggerontime: {2}
- triggeroninterval: {3}
- timevalue: {4}
- timeinterval: {5}
- action: {6}</value>
-  </data>
-
   <data name="botname.FactionsAFKBot" xml:space="preserve">
-      <value>FactionsAFKBot</value>
-  </data>
-
-  <data name="botname.AntiAFK" xml:space="preserve">
-    <value>AntiAFK</value>
-  </data>
-  <data name="botname.AutoCraft" xml:space="preserve">
-    <value>AutoCraft</value>
-  </data>
-  <data name="botname.AutoDrop" xml:space="preserve">
-    <value>AutoDrop</value>
-  </data>
-  <data name="botname.AutoEat" xml:space="preserve">
-    <value>AutoEat</value>
-  </data>
-  <data name="botname.AutoRelog" xml:space="preserve">
-    <value>AutoRelog</value>
-  </data>
-  <data name="botname.AutoRespond" xml:space="preserve">
-    <value>AutoRespond</value>
-  </data>
-  <data name="botname.ChatLog" xml:space="preserve">
-    <value>ChatLog</value>
-  </data>
-  <data name="botname.DiscordBridge" xml:space="preserve">
-    <value>DiscordBridge</value>
-  </data>
-  <data name="botname.RemoteControl" xml:space="preserve">
-    <value>RemoteControl</value>
-  </data>
-  <data name="botname.ReplayCapture" xml:space="preserve">
-    <value>ReplayCapture</value>
+    <value>FactionsAFKBot</value>
   </data>
   <data name="botname.Script" xml:space="preserve">
     <value>Script</value>
-  </data>
-  <data name="botname.ScriptScheduler" xml:space="preserve">
-    <value>ScriptScheduler</value>
   </data>
   <data name="cache.converting" xml:space="preserve">
     <value>Converting session cache from disk: {0}</value>
@@ -1698,5 +1383,8 @@ Logging in...</value>
   </data>
   <data name="cmd.dig.cancel" xml:space="preserve">
     <value>Cancel mining the block located at {0}.</value>
+  </data>
+  <data name="bot.factionsAfk.invalid_regex" xml:space="preserve">
+    <value>[FactionsAFKBot] Invalid Regex Detected: {0}</value>
   </data>
 </root>

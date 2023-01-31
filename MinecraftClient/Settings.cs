@@ -1251,74 +1251,18 @@ namespace MinecraftClient
                     set { ChatBots.FactionsAFKBot.Config = value; ChatBots.FactionsAFKBot.Config.OnSettingUpdate(); }
                 }
 
-                [TomlPrecedingComment("$ChatBot.AntiAfk$")]
-                public ChatBots.AntiAFK.Configs AntiAFK
+                [TomlPrecedingComment("Factions Cannon Bot")]
+                public ChatBots.FactionsCannonBot.Configs FactionsCannonBot
                 {
-                    get { return ChatBots.AntiAFK.Config; }
-                    set { ChatBots.AntiAFK.Config = value; ChatBots.AntiAFK.Config.OnSettingUpdate(); }
+                    get { return ChatBots.FactionsCannonBot.Config; }
+                    set { ChatBots.FactionsCannonBot.Config = value; ChatBots.FactionsCannonBot.Config.OnSettingUpdate(); }
                 }
 
-                [TomlPrecedingComment("$ChatBot.AutoCraft$")]
-                public ChatBots.AutoCraft.Configs AutoCraft
+                [TomlPrecedingComment("Factions Chat Bot")]
+                public ChatBots.FactionsChatBot.Configs FactionsChatBot
                 {
-                    get { return ChatBots.AutoCraft.Config; }
-                    set { ChatBots.AutoCraft.Config = value; ChatBots.AutoCraft.Config.OnSettingUpdate(); }
-                }
-
-                [TomlPrecedingComment("$ChatBot.AutoDrop$")]
-                public ChatBots.AutoDrop.Configs AutoDrop
-                {
-                    get { return ChatBots.AutoDrop.Config; }
-                    set { ChatBots.AutoDrop.Config = value; ChatBots.AutoDrop.Config.OnSettingUpdate(); }
-                }
-
-                [TomlPrecedingComment("$ChatBot.AutoEat$")]
-                public ChatBots.AutoEat.Configs AutoEat
-                {
-                    get { return ChatBots.AutoEat.Config; }
-                    set { ChatBots.AutoEat.Config = value; ChatBots.AutoEat.Config.OnSettingUpdate(); }
-                }
-
-                [TomlPrecedingComment("$ChatBot.AutoRespond$")]
-                public ChatBots.AutoRespond.Configs AutoRespond
-                {
-                    get { return ChatBots.AutoRespond.Config; }
-                    set { ChatBots.AutoRespond.Config = value; ChatBots.AutoRespond.Config.OnSettingUpdate(); }
-                }
-
-                [TomlPrecedingComment("$ChatBot.ChatLog$")]
-                public ChatBots.ChatLog.Configs ChatLog
-                {
-                    get { return ChatBots.ChatLog.Config; }
-                    set { ChatBots.ChatLog.Config = value; ChatBots.ChatLog.Config.OnSettingUpdate(); }
-                }
-
-                [TomlPrecedingComment("$ChatBot.DiscordBridge$")]
-                public ChatBots.DiscordBridge.Configs DiscordBridge
-                {
-                    get { return ChatBots.DiscordBridge.Config; }
-                    set { ChatBots.DiscordBridge.Config = value; ChatBots.DiscordBridge.Config.OnSettingUpdate(); }
-                }
-
-                [TomlPrecedingComment("$ChatBot.RemoteControl$")]
-                public ChatBots.RemoteControl.Configs RemoteControl
-                {
-                    get { return ChatBots.RemoteControl.Config; }
-                    set { ChatBots.RemoteControl.Config = value; ChatBots.RemoteControl.Config.OnSettingUpdate(); }
-                }
-
-                [TomlPrecedingComment("$ChatBot.ReplayCapture$")]
-                public ChatBots.ReplayCapture.Configs ReplayCapture
-                {
-                    get { return ChatBots.ReplayCapture.Config; }
-                    set { ChatBots.ReplayCapture.Config = value; ChatBots.ReplayCapture.Config.OnSettingUpdate(); }
-                }
-
-                [TomlPrecedingComment("$ChatBot.ScriptScheduler$")]
-                public ChatBots.ScriptScheduler.Configs ScriptScheduler
-                {
-                    get { return ChatBots.ScriptScheduler.Config; }
-                    set { ChatBots.ScriptScheduler.Config = value; ChatBots.ScriptScheduler.Config.OnSettingUpdate(); }
+                    get { return ChatBots.FactionsChatBot.Config; }
+                    set { ChatBots.FactionsChatBot.Config = value; ChatBots.FactionsChatBot.Config.OnSettingUpdate(); }
                 }
             }
         }
