@@ -133,6 +133,15 @@ namespace MinecraftClient {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [FactionsChatBot] Invalid Regex Detected: {0}.
+        /// </summary>
+        internal static string bot_factionsChat_invalid_regex {
+            get {
+                return ResourceManager.GetString("bot.factionsChat.invalid_regex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Script &apos;{0}&apos; failed to run ({1})..
         /// </summary>
         internal static string bot_script_fail {

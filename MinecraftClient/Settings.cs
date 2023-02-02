@@ -1189,16 +1189,18 @@ namespace MinecraftClient
             public class ChatFormatConfig
             {
                 [TomlInlineComment("$ChatFormat.Builtins$")]
-                public bool Builtins = true;
+                public bool Builtins = false;
 
                 [TomlInlineComment("$ChatFormat.UserDefined$")]
-                public bool UserDefined = false;
+                public bool UserDefined = true;
 
-                public string Public = @"^<([a-zA-Z0-9_]+)> (.+)$";
+                public string Public = @"^(?:\[[\+\-\*\*]+\w+\] )?<\w+> (\w+) » (.+)$";
 
-                public string Private = @"^([a-zA-Z0-9_]+) whispers to you: (.+)$";
+                public string Faction = @"^([\-\+]|[\*]{1,3})(?:(.*) )?(\w+): (.+)$";
 
-                public string TeleportRequest = @"^([a-zA-Z0-9_]+) has requested (?:to|that you) teleport to (?:you|them)\.$";
+                public string Private = @"^<<\w+> (\w+) -> me> (.+)$";
+
+                public string TeleportRequest = @"^\[\!\] <\w+> (\w+) has requested (?:(?:to teleport to you)|(?:that you teleport to them))\.";
 
                 public void OnSettingUpdate()
                 {
@@ -1211,6 +1213,13 @@ namespace MinecraftClient
                         {
                             checkResult = false;
                             ConsoleIO.WriteLineFormatted("§c[Settings]Illegal regular expression: ChatFormat.Public = " + Public);
+                        }
+
+                        try { _ = new Regex(Faction); }
+                        catch (ArgumentException)
+                        {
+                            checkResult = false;
+                            ConsoleIO.WriteLineFormatted("§c[Settings]Illegal regular expression: ChatFormat.Faction = " + Faction);
                         }
 
                         try { _ = new Regex(Private); }

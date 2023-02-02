@@ -1387,4 +1387,7 @@ Logging in...</value>
   <data name="bot.factionsAfk.invalid_regex" xml:space="preserve">
     <value>[FactionsAFKBot] Invalid Regex Detected: {0}</value>
   </data>
+  <data name="bot.factionsChat.invalid_regex" xml:space="preserve">
+    <value>[FactionsChatBot] Invalid Regex Detected: {0}</value>
+  </data>
 </root>

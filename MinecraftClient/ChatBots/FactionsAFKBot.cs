@@ -87,7 +87,7 @@ namespace MinecraftClient.ChatBots
 
         private void _Initialize()
         {
-            LogToConsole("Regexs: " + Respawn_regex.ToString());
+            
         }
 
         public override void Update()

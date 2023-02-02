@@ -32,6 +32,7 @@ namespace MinecraftClient.Scripting
     public abstract class ChatBot
     {
         public enum DisconnectReason { InGameKick, LoginRejected, ConnectionLost, UserLogout };
+        public enum FactionsRole { Recruit, Member, Moderator, CoLeader, Leader };
 
         //Handler will be automatically set on bot loading, don't worry about this
         public void SetHandler(McClient handler) { _handler = handler; }
@@ -141,6 +142,9 @@ namespace MinecraftClient.Scripting
         /// </summary>
         /// <param name="text">Text from the server</param>
         public virtual void GetText(string text) { }
+
+        public virtual void GetFactionMessage(FactionsRole factionsRole, string? factionTitle, string username, string message) { }
+        
 
         /// <summary>
         /// Any text sent by the server will be sent here by MinecraftCom (extended variant)
@@ -677,6 +681,36 @@ namespace MinecraftClient.Scripting
             }
 
             return false;
+        }
+
+        public struct FactionSender {
+            public FactionsRole Role;
+            public string Username;
+            public string? Title;
+        }
+
+        protected static bool IsFactionMessage(string text, ref FactionSender sender, ref string message)
+        {
+            Match match = Regex.Match(text, Config.ChatFormat.Faction);
+
+            if (!match.Success) return false;
+
+            switch (match.Groups[1].Value)
+            {
+                case "-": sender.Role = FactionsRole.Recruit; break;
+                case "+": sender.Role = FactionsRole.Member; break;
+                case "*": sender.Role = FactionsRole.Moderator; break;
+                case "**": sender.Role = FactionsRole.CoLeader; break;
+                case "***": sender.Role = FactionsRole.Leader; break;
+                default: throw new ArgumentOutOfRangeException(match.Groups[1].Value);
+            }
+
+            sender.Title = match.Groups[2].Success ? match.Groups[2].Value : null;
+            sender.Username = match.Groups[3].Value;
+            if (!IsValidName(sender.Username)) return false;
+            message = match.Groups[4].Value;
+
+            return true;
         }
 
         /// <summary>
